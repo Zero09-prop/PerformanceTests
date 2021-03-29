@@ -53,24 +53,24 @@ public class PerformanceCheck {
 			collection.add(i);
 		}
 		long end = System.nanoTime();
-		System.out.println("'Add(int i)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'Add(int i)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 5000 times");
 		
 		begin = System.nanoTime();
 		for(int i = 0;i < 5000;i++) {
 			collection.add(i,i);
 		}
 		end = System.nanoTime();
-		System.out.println("'Add(int index,int element)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'Add(int index,int element)' operation: " + (double)(end - begin)/1000000 + " ms Completed 5000 times");
 		
 		begin = System.nanoTime();
 		collection.addAll(collection);
 		end = System.nanoTime();
-		System.out.println("'addAll(Collection <? extends E> collection)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'addAll(Collection <? extends E> collection)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 		
 		begin = System.nanoTime();
 		collection.addAll(0,collection);
 		end = System.nanoTime();
-		System.out.println("'addAll(int index, Collection <? extends E> collection)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'addAll(int index, Collection <? extends E> collection)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/***
@@ -87,7 +87,7 @@ public class PerformanceCheck {
 			collection.remove(i);
 		}
 		long end = System.nanoTime();
-		System.out.println("'remove(int index)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'remove(int index)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1000 times");
 		
 		begin = System.nanoTime();
 		for(int i = 0; i < 3000; i++) {
@@ -95,7 +95,7 @@ public class PerformanceCheck {
 		}
 		end = System.nanoTime();
 		
-		System.out.println("'removeAll(Collection<?> c)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'removeAll(Collection<?> c)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 3000 times");
 	}
 	
 	/**
@@ -110,7 +110,7 @@ public class PerformanceCheck {
 			collection.sort(null);
 			long end = System.nanoTime();
 			
-			System.out.println("'sort(Comparator<? super E> c)' operation: " + (double)(end - begin)/1000000 + " ms");
+			System.out.println("'sort(Comparator<? super E> c)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 		}
 	
 	/***
@@ -124,7 +124,7 @@ public class PerformanceCheck {
 		collection.size();
 		long end  = System.nanoTime();
 		
-		System.out.println("'size()' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'size()' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -138,7 +138,7 @@ public class PerformanceCheck {
 		long begin = System.nanoTime();
 		collection.contains(3567);
 		long end = System.nanoTime();
-		System.out.println("'contains(Object o)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'contains(Object o)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 		
 		ArrayList<Integer> lst = new ArrayList<Integer>(1);
 		lst.add(123);
@@ -147,7 +147,7 @@ public class PerformanceCheck {
 		collection.containsAll(lst);
 		end = System.nanoTime();
 		
-		System.out.println("'containsAll(Collection<?> c)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'containsAll(Collection<?> c)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -160,7 +160,7 @@ public class PerformanceCheck {
 		long begin = System.nanoTime();
 		collection.isEmpty();
 		long end = System.nanoTime();
-		System.out.println("'isEmpty()' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'isEmpty()' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -174,13 +174,13 @@ public class PerformanceCheck {
 		long begin = System.nanoTime();
 		collection.indexOf(3700);
 		long end = System.nanoTime();
-		System.out.println("'indexOf(Object o)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'indexOf(Object o)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 		
 		begin = System.nanoTime();
 		collection.lastIndexOf(4057);
 		end = System.nanoTime();
 		
-		System.out.println("'lastIndexOf(Object o)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'lastIndexOf(Object o)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -197,7 +197,7 @@ public class PerformanceCheck {
 		}
 		long end = System.nanoTime();
 		
-		System.out.println("'Get' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'Get' operation: " + (double)(end - begin)/1000000 + " ms. Completed " + collection.size() +" times");
 	}
 	
 	/**
@@ -209,7 +209,7 @@ public class PerformanceCheck {
 		long begin = System.nanoTime();
 		collection.toArray();
 		long end = System.nanoTime();
-		System.out.println("'ToArray' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'ToArray' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -223,7 +223,7 @@ public class PerformanceCheck {
 		collection.replaceAll(e -> -e);
 		long end = System.nanoTime();
 		
-		System.out.println("'replaceAll(UnaryOperator<Integer> operator)' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'replaceAll(UnaryOperator<Integer> operator)' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class PerformanceCheck {
 		collection.clear();
 		long end = System.nanoTime();
 		
-		System.out.println("'clear()' operation: " + (double)(end - begin)/1000000 + " ms");
+		System.out.println("'clear()' operation: " + (double)(end - begin)/1000000 + " ms. Completed 1 times");
 	}
 
 
